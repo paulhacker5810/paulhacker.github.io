@@ -13,6 +13,7 @@ If you are still on a version that goes back more than two versions, you have tw
 So lets start with the Upgraded scenario. If you upgraded, or have Azure DevOps Server running, its time to start the work. Which I will outline below.
 
 If you are using the "jumpbox" method, there are a couple extra steps you need to do. 
+<<<<<<< HEAD
 First off you need to stop the collection on your production environment and then detach the collection (Yes there is some down time). Now that its detached, back it up and move the .bak file to the Azure DevOps Server you stood up. Once that database is backed up, reattach and get your production instance back online as soon as possible.
 
 Once its uploaded or moved over, you need to restore it to SQL Server. Once that is done attach the collection. It will take a bit to attach since it has to configure things for the latest version.
@@ -23,10 +24,23 @@ Now with that done, the work begins. It does not matter what method you used to 
 
 First off the migration guide is located here so I strongly suggest you download it.
 https://www.microsoft.com/en-us/download/details.aspx?id=54274 
+=======
+First off you need to stop the collection on your production environment and then detach the collection (Yes there is some down time). Now that its detached, back it up and move the .bak file to the Azure DevOps Server you stood up.
+Once its uploaded or moved over, you need to restore it to SQL Server. One that is done attach the collection. It will take a bit to attach since it has to configure things for the latest version.
+
+Once the attach is done and the collection is online, go make sure it all looks like it should.
+
+Now that that is done, the work begins. It dos not matter what method you used to get to the latest version of Azure DevOps Server, the following steps are the same.
+
+
+First off the migration guide is located here so I strongly suggest you download it.
+[Azure DevOps Migration Guide ](https://www.microsoft.com/en-us/download/details.aspx?id=54274 )
+>>>>>>> 916e9527f18464b045114ba6ac6d87dcef8413ad
 
 Now lets go through the 5 sections of the guide.
 
 Step 1 - Get Started 
+<<<<<<< HEAD
 It's just an overview as well as the link to the migration tool. Which is the same link that is above for the guide. Depending on the version of Azure DevOps Server you are on, there is a tool for it. So right now there is the Migrator for 2019RTW and 2019.01.
 
 Section 2 is about the cloud pre-requisites. What this is focused on is the fact that you have setup Azure Active Directory and have it replicating with your on premises AD.
@@ -63,3 +77,6 @@ NOTE: If you migrate a user in as Historical, you CANNOT move it back to Active.
 
 
 
+=======
+Its just an overview as well as the link to the migration tool. Which is the same link that is above for the guide. Depending on the version of Azure DevOps Server you are on, there is a tool for it.
+>>>>>>> 916e9527f18464b045114ba6ac6d87dcef8413ad
