@@ -13,7 +13,7 @@ If you are still on a version that goes back more than two versions, you have tw
 So lets start with the Upgraded scenario. If you upgraded, or have Azure DevOps Server running, its time to start the work. Which I will outline below.
 
 If you are using the "jumpbox" method, there are a couple extra steps you need to do. 
-<<<<<<< HEAD
+
 First off you need to stop the collection on your production environment and then detach the collection (Yes there is some down time). Now that its detached, back it up and move the .bak file to the Azure DevOps Server you stood up. Once that database is backed up, reattach and get your production instance back online as soon as possible.
 
 Once its uploaded or moved over, you need to restore it to SQL Server. Once that is done attach the collection. It will take a bit to attach since it has to configure things for the latest version.
@@ -24,7 +24,7 @@ Now with that done, the work begins. It does not matter what method you used to 
 
 First off the migration guide is located here so I strongly suggest you download it.
 https://www.microsoft.com/en-us/download/details.aspx?id=54274 
-=======
+
 First off you need to stop the collection on your production environment and then detach the collection (Yes there is some down time). Now that its detached, back it up and move the .bak file to the Azure DevOps Server you stood up.
 Once its uploaded or moved over, you need to restore it to SQL Server. One that is done attach the collection. It will take a bit to attach since it has to configure things for the latest version.
 
