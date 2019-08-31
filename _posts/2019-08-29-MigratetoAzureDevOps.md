@@ -75,7 +75,7 @@ few different methods for doing this step which are documented at https://aka.ms
 
 **Section 6 - Import**
 
-Now you are going to need to create an Azure Storage Account in the region that you used for the prepare command. This is just a typical Blob container in Azure. You then need to upload the dacpac file you will create to the container. I use the Azure Storage Explorer to upload the file and generate the SaS key we need. You can use the method that works best for you. I just like the Storage Explorer.
+Now you are going to need to create an Azure Storage Account in the region that you used for the prepare command. This is just a typical Blob container in Azure. You will be uploading the .Dacpac file you will create shortly, to the container. I use the Azure Storage Explorer to upload the file and generate the SaS key we need. You can use the method that works best for you. I just like the Storage Explorer.
 
 
 
