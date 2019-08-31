@@ -58,24 +58,3 @@ few different methods for doing this step which are documented at https://aka.ms
 
 Now you will need to run the prepare step. This is going to generate the files needed for the migrator to import correctly. The two files you really care about are the Identities.csv and the import.json. The identities file lists all the users and there status, either active or historical. You want to be sure all accounts that are currently active are listed as Active. If they are listed as Historical, that means its an account that was not matched in AAD to a user. 
 NOTE: If you migrate a user in as Historical, you CANNOT move it back to Active. That means you need to re-add the user into Azure DevOps. This is important, it will break the linkage to their work that's alrady in the system. so while names are the same, they wont match up to their work.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-Its just an overview as well as the link to the migration tool. Which is the same link that is above for the guide. Depending on the version of Azure DevOps Server you are on, there is a tool for it.
->>>>>>> 916e9527f18464b045114ba6ac6d87dcef8413ad
