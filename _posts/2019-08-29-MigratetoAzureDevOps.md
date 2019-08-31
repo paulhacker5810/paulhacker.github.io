@@ -22,7 +22,7 @@ Now that that is done, the work begins. It dos not matter what method you used t
 
 
 First off the migration guide is located here so I strongly suggest you download it.
-https://www.microsoft.com/en-us/download/details.aspx?id=54274 
+[Azure DevOps Migration Guide ](https://www.microsoft.com/en-us/download/details.aspx?id=54274 )
 
 Now lets go through the 5 sections of the guide.
 
