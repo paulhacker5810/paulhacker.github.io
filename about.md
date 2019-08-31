@@ -4,10 +4,6 @@ title: About
 permalink: /about/
 ---
 
-### More Information
-
-<<<<<<< HEAD
-=======
 ![](images/PaulHacker1_2018_Casual.JPG)
 
 
