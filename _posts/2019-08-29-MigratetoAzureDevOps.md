@@ -50,19 +50,33 @@ What this is focused on is the fact that you have setup Azure Active Directory a
 
 This section is all about the options to upgrade to the latest version. I have already outlined a couple options, but if you are on an much older version of TFS, you will want to review this section to get you upgraded correctly. 
 
-**Section 4 - Validate** 
+**Section 4 - Validate your server** 
 
 This section is focused on the validation step. At this point you will run the migrator from a command prompt or Powershell window. The command you are going to run is similar to this:
 Migrator validate /collection:http://localhost:8080/tfs/DefaultCollection 
-Just replace the values with what matches your environment. This will generate a validation report. You have to get a successful validation to move on. if you have a modified process template, this is where there may be some issue. Not all your customizations may move over cleanly. This means you have to back out those changes and try again. Once the migration is complete you have the ability to make the changes in Azure DevOps. Remember the goal here is to validate sucessfully.
+Just replace the values with what matches your environment. This will generate a validation report. You have to get a successful validation to move on. if you have a modified process template, this is where there may be some issue. Not all your customizations may move over cleanly. This means you have to back out those changes and try again. Once the migration is complete you have the ability to make the changes in Azure DevOps. Remember the goal here is to validate successfully.
 
-**Section 5 - Prepare** 
+**Section 5 - Get Ready to Import** 
 
-This section is focused on preparing for import.
-**NOTE:** ***Many legacy subscribers will find that their subscription was assigned to and activated
+This section is focused on preparing for import. There are a few important steps you need to take. Again, follow the directions.
+
+First you will need to run the prepare step. Here is the command example. The regions are outlined in the guide so you just need to find the region where your Azure DevOps service datacenter is at.
+
+*Migrator prepare /collection:http://localhost:8080/tfs/DefaultCollection/tenantDomainName:contoso.com /Region:CUS*
+
+This is going to generate the files needed for the migrator to import correctly. The two files you really care about are the Identities.csv and the import.json. The identities file lists all the users and there status, either active or historical. You want to be sure all accounts that are currently active are listed as Active. If they are listed as Historical, that means its an account that was not matched in AAD to a user. 
+
+**NOTE:** *Many legacy subscribers will find that their subscription was assigned to and activated
 with a Microsoft Organization. The last step for each subscriber to take is to link the
 Visual Studio Subscription to their Azure Active Directory organization. There are a
-few different methods for doing this step which are documented at https://aka.ms/LinkVSSubscriptionToAADOrganization***
+few different methods for doing this step which are documented at https://aka.ms/LinkVSSubscriptionToAADOrganization*
 
-Now you will need to run the prepare step. This is going to generate the files needed for the migrator to import correctly. The two files you really care about are the Identities.csv and the import.json. The identities file lists all the users and there status, either active or historical. You want to be sure all accounts that are currently active are listed as Active. If they are listed as Historical, that means its an account that was not matched in AAD to a user. 
-NOTE: If you migrate a user in as Historical, you CANNOT move it back to Active. That means you need to re-add the user into Azure DevOps. This is important, it will break the linkage to their work that's alrady in the system. so while names are the same, they wont match up to their work.
+**NOTE:** *If you migrate a user in as Historical, you CANNOT move it back to Active. That means you need to re-add the user into Azure DevOps. This is important, it will break the linkage to their work that's already in the system. so while names are the same, they won't match up to their work. Bottom line is make sure the users that are supposed to be active are marked as active.*
+
+**Section 6 - Import**
+
+Now you are going to need to create an Azure Storage Account in the region that you used for the prepare command. This is just a typical Blob container in Azure. You then need to upload the dacpac file you will create to the container. I use the Azure Storage Explorer to upload the file and generate the SaS key we need. You can use the method that works best for you. I just like the Storage Explorer.
+
+
+
+
