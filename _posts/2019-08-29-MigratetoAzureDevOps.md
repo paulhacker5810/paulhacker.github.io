@@ -35,12 +35,11 @@ Now that that is done, the work begins. It dos not matter what method you used t
 
 First off the migration guide is located here so I strongly suggest you download it.
 [Azure DevOps Migration Guide ](https://www.microsoft.com/en-us/download/details.aspx?id=54274 )
->>>>>>> 916e9527f18464b045114ba6ac6d87dcef8413ad
 
 Now lets go through the 5 sections of the guide.
 
 Step 1 - Get Started 
-<<<<<<< HEAD
+
 It's just an overview as well as the link to the migration tool. Which is the same link that is above for the guide. Depending on the version of Azure DevOps Server you are on, there is a tool for it. So right now there is the Migrator for 2019RTW and 2019.01.
 
 Section 2 is about the cloud pre-requisites. What this is focused on is the fact that you have setup Azure Active Directory and have it replicating with your on premises AD.
@@ -52,7 +51,7 @@ Migrator validate /collection:http://localhost:8080/tfs/DefaultCollection
 Just replace the values with what matches your environment. This will generate a validation report. You have to get a successful validation to move on. if you have a modified process template, this is where there may be some issue. Not all your customizations may move over cleanly. This means you have to back out those changes and try again. Once the migration is complete you have the ability to make the changes in Azure DevOps. Remember the goal here is to validate sucessfully.
 
 Section 5 is focused on preparing for import.
-NOTE: ***Many legacy subscribers will find that their subscription was assigned to and activated
+**NOTE:** ***Many legacy subscribers will find that their subscription was assigned to and activated
 with a Microsoft Organization. The last step for each subscriber to take is to link the
 Visual Studio Subscription to their Azure Active Directory organization. There are a
 few different methods for doing this step which are documented at https://aka.ms/LinkVSSubscriptionToAADOrganization***
