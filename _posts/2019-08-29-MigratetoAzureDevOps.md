@@ -75,7 +75,14 @@ few different methods for doing this step which are documented at https://aka.ms
 
 **Section 6 - Import**
 
-Now you are going to need to create an Azure Storage Account in the region that you used for the prepare command. This is just a typical Blob container in Azure. You will be uploading the .Dacpac file you will create shortly, to the container. I use the Azure Storage Explorer to upload the file and generate the SaS key we need. You can use the method that works best for you. I just like the Storage Explorer.
+There are two methods of the import step depending on the size of the collection database. The migrator will warn you if the database is too large to import using the .Dacpac method. Here is a link to the steps you need to follow if the database is too large. I am not listing all the details here.
+<a href="https://docs.microsoft.com/en-us/azure/devops/migrate/migration-import?utm_source=ms&utm_medium=guide&utm_campaign=vstsdataimportguide&view=azure-devops#importing-large-collections" target="_blank">Import Large Collections</a>
+
+If you do not get the warning about database size, then the steps below are what you need to follow.
+
+You are going to need to create an Azure Storage Account in the region that you used for the prepare command. This is just a typical Blob container in Azure. You will be uploading the .Dacpac file you will create shortly, to the container. I use the Azure Storage Explorer to upload the file and generate the SaS key we need. The SaS key is required to make sure the migrator can access the .Dacpac in the storage account. The SaS key is a secret value so do not share it. You can use the method that works best for you to do things tasks. I just like the Azure Storage Explorer.
+
+Last thing before the migration is to update the import.json file. There are a few places to update in the the file. They are all marked clearly so you know what to update.
 
 
 
